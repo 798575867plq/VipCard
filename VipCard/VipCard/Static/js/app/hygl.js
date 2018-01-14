@@ -38,7 +38,25 @@
                         }
 
                     });
-                }
+                },
+                showChange: function() {
+                    app.$refs.custom.show({
+                        title: "会员换卡",
+                        el: $("#changeDialog")
+                    });
+                },
+                hideChange: function() {
+                    app.$refs.custom.hide();
+                },
+                showCharge: function() {
+                    app.$refs.custom.show({
+                        title: "会员充值",
+                        el: $("#chargeDialog")
+                    });
+                },
+                hideCharge: function() {
+                    app.$refs.custom.hide();
+                },
 
             }
         });
