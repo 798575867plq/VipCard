@@ -1,15 +1,29 @@
 ﻿use master
 go
 
-if(DB_ID('MvcOne') is not null) drop database MvcOne
+if(DB_ID('VipCard') is not null) drop database VipCard
 go
 
-create database MvcOne
+create database VipCard
 go
 
-use MvcOne
+use VipCard
 go
 
+/*登录用户信息*/
+create table TbUser
+(
+	uid int identity primary key not null,
+	username nvarchar(50) unique not null,
+	password nvarchar(50) not null,
+	nickname nvarchar(50) not null
+)
+go
+insert into TbUser(username,password,nickname) values('admin','123456','内置管理员')
+go
+
+select * from TbUser
+go
 
 /*会员卡信息*/
 create table TblVipCard

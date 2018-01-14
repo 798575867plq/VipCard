@@ -48,7 +48,7 @@ namespace VipCard.Models
         //设置正确结果
         public void Ok(string message)
         {
-            Success = false;
+            Success = true;
             ServerCode = 200;
             ServerMessage = message;
         }

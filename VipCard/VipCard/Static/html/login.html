@@ -1,36 +1,53 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
-    <link href="../css/app/content.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="container-fluid w400 text-center">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="panel-title">登录</div>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
+        <link href="../css/app/content.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="divVue">
+            <div>
+                <!-- 对话框部分 -->
+                <alert-dialog ref="alert"></alert-dialog>
+                <confirm-dialog ref="confirm"></confirm-dialog>
+                <wait-dialog ref="wait"></wait-dialog>
+                <custom-dialog ref="custom"></custom-dialog>
+                <!-- 对话框部分 -->
             </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">用户名：</span>
-                        <input type="text" class="form-control" />
+
+            <div class="container-fluid w400 text-center">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="panel-title">登录</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">用户名：</span>
+                                <input type="text" class="form-control" v-model="loginform.Username"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">密码：</span>
+                                <input type="password" class="form-control"  v-model="loginform.Password"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="btn btn-primary" @click="login">登录</span>
+                        <span class="btn btn-primary" @click="reset">重置</span>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">密码：</span>
-                        <input type="password" class="form-control" />
-                    </div>
-                </div>
-            </div>
-            <div class="panel-footer">
-                <span class="btn btn-primary" onclick="location='index.html'">登录</span>
-                <span class="btn btn-primary">取消</span>
             </div>
         </div>
-    </div>
-</body>
+        <script src="../js/lib/jquery.min.js"></script>
+        <script src="../js/lib/bootstrap.min.js"></script>
+        <script src="../js/lib/vue.min.js"></script>
+        <script src="../js/app/app.js"></script>
+        <script src="../js/app/dialog.js"></script>
+        <script src="../js/app/login.js"></script>
+    </body>
 </html>
