@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F6E74AA-EF52-443F-A664-7111ACB5EAA9}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VipCard</RootNamespace>
+    <AssemblyName>VipCard</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Dal\Entity\Page.cs" />
+    <Compile Include="Dal\Util\DBConn.cs" />
+    <Compile Include="Dal\Util\DBHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\lib\css\bootstrap.min.css" />
+    <Content Include="Content\lib\css\font-awesome.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Static\css\app\content.css" />
+    <Content Include="Static\css\app\iconfont.css" />
+    <Content Include="Static\css\app\vuetran.css" />
+    <Content Include="Static\css\lib\bootstrap.min.css" />
+    <Content Include="Static\html\blank.html" />
+    <Content Include="Static\html\hygl.html" />
+    <Content Include="Static\html\hyxf.html" />
+    <Content Include="Static\html\hyzl.html" />
+    <Content Include="Static\html\index.html" />
+    <Content Include="Static\html\jfsc.html" />
+    <Content Include="Static\html\jyjl.html" />
+    <Content Include="Static\html\login.html" />
+    <Content Include="Static\html\sjtx.html" />
+    <Content Include="Static\html\tjbb.html" />
+    <Content Include="Static\html\xtsz.html" />
+    <Content Include="Static\js\app\blank.js" />
+    <Content Include="Static\js\app\dialog.js" />
+    <Content Include="Static\js\lib\angular.min.js" />
+    <Content Include="Static\js\lib\bootstrap.min.js" />
+    <Content Include="Static\js\lib\jquery.min.js" />
+    <Content Include="Static\js\lib\vue.min.js" />
+    <Content Include="Static\ue\dialogs\anchor\anchor.html" />
+    <Content Include="Static\ue\dialogs\attachment\attachment.css" />
+    <Content Include="Static\ue\dialogs\attachment\attachment.html" />
+    <Content Include="Static\ue\dialogs\attachment\attachment.js" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="Static\ue\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="Static\ue\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="Static\ue\dialogs\attachment\images\alignicon.png" />
+    <Content Include="Static\ue\dialogs\attachment\images\bg.png" />
+    <Content Include="Static\ue\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="Static\ue\dialogs\attachment\images\file-icons.png" />
+    <Content Include="Static\ue\dialogs\attachment\images\icons.gif" />
+    <Content Include="Static\ue\dialogs\attachment\images\icons.png" />
+    <Content Include="Static\ue\dialogs\attachment\images\image.png" />
+    <Content Include="Static\ue\dialogs\attachment\images\progress.png" />
+    <Content Include="Static\ue\dialogs\attachment\images\success.gif" />
+    <Content Include="Static\ue\dialogs\attachment\images\success.png" />
+    <Content Include="Static\ue\dialogs\background\background.css" />
+    <Content Include="Static\ue\dialogs\background\background.html" />
+    <Content Include="Static\ue\dialogs\background\background.js" />
+    <Content Include="Static\ue\dialogs\background\images\bg.png" />
+    <Content Include="Static\ue\dialogs\background\images\success.png" />
+    <Content Include="Static\ue\dialogs\charts\chart.config.js" />
+    <Content Include="Static\ue\dialogs\charts\charts.css" />
+    <Content Include="Static\ue\dialogs\charts\charts.html" />
+    <Content Include="Static\ue\dialogs\charts\charts.js" />
+    <Content Include="Static\ue\dialogs\charts\images\charts0.png" />
+    <Content Include="Static\ue\dialogs\charts\images\charts1.png" />
+    <Content Include="Static\ue\dialogs\charts\images\charts2.png" />
+    <Content Include="Static\ue\dialogs\charts\images\charts3.png" />
+    <Content Include="Static\ue\dialogs\charts\images\charts4.png" />
+    <Content Include="Static\ue\dialogs\charts\images\charts5.png" />
+    <Content Include="Static\ue\dialogs\emotion\emotion.css" />
+    <Content Include="Static\ue\dialogs\emotion\emotion.html" />
+    <Content Include="Static\ue\dialogs\emotion\emotion.js" />
+    <Content Include="Static\ue\dialogs\emotion\images\0.gif" />
+    <Content Include="Static\ue\dialogs\emotion\images\bface.gif" />
+    <Content Include="Static\ue\dialogs\emotion\images\cface.gif" />
+    <Content Include="Static\ue\dialogs\emotion\images\fface.gif" />
+    <Content Include="Static\ue\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="Static\ue\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="Static\ue\dialogs\emotion\images\tface.gif" />
+    <Content Include="Static\ue\dialogs\emotion\images\wface.gif" />
+    <Content Include="Static\ue\dialogs\emotion\images\yface.gif" />
+    <Content Include="Static\ue\dialogs\gmap\gmap.html" />
+    <Content Include="Static\ue\dialogs\help\help.css" />
+    <Content Include="Static\ue\dialogs\help\help.html" />
+    <Content Include="Static\ue\dialogs\help\help.js" />
+    <Content Include="Static\ue\dialogs\image\image.css" />
+    <Content Include="Static\ue\dialogs\image\image.html" />
+    <Content Include="Static\ue\dialogs\image\image.js" />
+    <Content Include="Static\ue\dialogs\image\images\alignicon.jpg" />
+    <Content Include="Static\ue\dialogs\image\images\bg.png" />
+    <Content Include="Static\ue\dialogs\image\images\icons.gif" />
+    <Content Include="Static\ue\dialogs\image\images\icons.png" />
+    <Content Include="Static\ue\dialogs\image\images\image.png" />
+    <Content Include="Static\ue\dialogs\image\images\progress.png" />
+    <Content Include="Static\ue\dialogs\image\images\success.gif" />
+    <Content Include="Static\ue\dialogs\image\images\success.png" />
+    <Content Include="Static\ue\dialogs\insertframe\insertframe.html" />
+    <Content Include="Static\ue\dialogs\internal.js" />
+    <Content Include="Static\ue\dialogs\link\link.html" />
+    <Content Include="Static\ue\dialogs\map\map.html" />
+    <Content Include="Static\ue\dialogs\map\show.html" />
+    <Content Include="Static\ue\dialogs\music\music.css" />
+    <Content Include="Static\ue\dialogs\music\music.html" />
+    <Content Include="Static\ue\dialogs\music\music.js" />
+    <Content Include="Static\ue\dialogs\preview\preview.html" />
+    <Content Include="Static\ue\dialogs\scrawl\images\addimg.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\brush.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\delimg.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\empty.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\eraser.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\redo.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\redoH.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\scale.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\size.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\undo.png" />
+    <Content Include="Static\ue\dialogs\scrawl\images\undoH.png" />
+    <Content Include="Static\ue\dialogs\scrawl\scrawl.css" />
+    <Content Include="Static\ue\dialogs\scrawl\scrawl.html" />
+    <Content Include="Static\ue\dialogs\scrawl\scrawl.js" />
+    <Content Include="Static\ue\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="Static\ue\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="Static\ue\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="Static\ue\dialogs\spechars\spechars.html" />
+    <Content Include="Static\ue\dialogs\spechars\spechars.js" />
+    <Content Include="Static\ue\dialogs\table\dragicon.png" />
+    <Content Include="Static\ue\dialogs\table\edittable.css" />
+    <Content Include="Static\ue\dialogs\table\edittable.html" />
+    <Content Include="Static\ue\dialogs\table\edittable.js" />
+    <Content Include="Static\ue\dialogs\table\edittd.html" />
+    <Content Include="Static\ue\dialogs\table\edittip.html" />
+    <Content Include="Static\ue\dialogs\template\config.js" />
+    <Content Include="Static\ue\dialogs\template\images\bg.gif" />
+    <Content Include="Static\ue\dialogs\template\images\pre0.png" />
+    <Content Include="Static\ue\dialogs\template\images\pre1.png" />
+    <Content Include="Static\ue\dialogs\template\images\pre2.png" />
+    <Content Include="Static\ue\dialogs\template\images\pre3.png" />
+    <Content Include="Static\ue\dialogs\template\images\pre4.png" />
+    <Content Include="Static\ue\dialogs\template\template.css" />
+    <Content Include="Static\ue\dialogs\template\template.html" />
+    <Content Include="Static\ue\dialogs\template\template.js" />
+    <Content Include="Static\ue\dialogs\video\images\bg.png" />
+    <Content Include="Static\ue\dialogs\video\images\center_focus.jpg" />
+    <Content Include="Static\ue\dialogs\video\images\file-icons.gif" />
+    <Content Include="Static\ue\dialogs\video\images\file-icons.png" />
+    <Content Include="Static\ue\dialogs\video\images\icons.gif" />
+    <Content Include="Static\ue\dialogs\video\images\icons.png" />
+    <Content Include="Static\ue\dialogs\video\images\image.png" />
+    <Content Include="Static\ue\dialogs\video\images\left_focus.jpg" />
+    <Content Include="Static\ue\dialogs\video\images\none_focus.jpg" />
+    <Content Include="Static\ue\dialogs\video\images\progress.png" />
+    <Content Include="Static\ue\dialogs\video\images\right_focus.jpg" />
+    <Content Include="Static\ue\dialogs\video\images\success.gif" />
+    <Content Include="Static\ue\dialogs\video\images\success.png" />
+    <Content Include="Static\ue\dialogs\video\video.css" />
+    <Content Include="Static\ue\dialogs\video\video.html" />
+    <Content Include="Static\ue\dialogs\video\video.js" />
+    <Content Include="Static\ue\dialogs\webapp\webapp.html" />
+    <Content Include="Static\ue\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="Static\ue\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="Static\ue\dialogs\wordimage\tangram.js" />
+    <Content Include="Static\ue\dialogs\wordimage\wordimage.html" />
+    <Content Include="Static\ue\dialogs\wordimage\wordimage.js" />
+    <Content Include="Static\ue\lang\en\en.js" />
+    <Content Include="Static\ue\lang\en\images\addimage.png" />
+    <Content Include="Static\ue\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="Static\ue\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="Static\ue\lang\en\images\background.png" />
+    <Content Include="Static\ue\lang\en\images\button.png" />
+    <Content Include="Static\ue\lang\en\images\copy.png" />
+    <Content Include="Static\ue\lang\en\images\deletedisable.png" />
+    <Content Include="Static\ue\lang\en\images\deleteenable.png" />
+    <Content Include="Static\ue\lang\en\images\listbackground.png" />
+    <Content Include="Static\ue\lang\en\images\localimage.png" />
+    <Content Include="Static\ue\lang\en\images\music.png" />
+    <Content Include="Static\ue\lang\en\images\rotateleftdisable.png" />
+    <Content Include="Static\ue\lang\en\images\rotateleftenable.png" />
+    <Content Include="Static\ue\lang\en\images\rotaterightdisable.png" />
+    <Content Include="Static\ue\lang\en\images\rotaterightenable.png" />
+    <Content Include="Static\ue\lang\en\images\upload.png" />
+    <Content Include="Static\ue\lang\zh-cn\images\copy.png" />
+    <Content Include="Static\ue\lang\zh-cn\images\localimage.png" />
+    <Content Include="Static\ue\lang\zh-cn\images\music.png" />
+    <Content Include="Static\ue\lang\zh-cn\images\upload.png" />
+    <Content Include="Static\ue\lang\zh-cn\zh-cn.js" />
+    <Content Include="Static\ue\themes\default\css\ueditor.css" />
+    <Content Include="Static\ue\themes\default\css\ueditor.min.css" />
+    <Content Include="Static\ue\themes\default\dialogbase.css" />
+    <Content Include="Static\ue\themes\default\images\anchor.gif" />
+    <Content Include="Static\ue\themes\default\images\arrow.png" />
+    <Content Include="Static\ue\themes\default\images\arrow_down.png" />
+    <Content Include="Static\ue\themes\default\images\arrow_up.png" />
+    <Content Include="Static\ue\themes\default\images\button-bg.gif" />
+    <Content Include="Static\ue\themes\default\images\cancelbutton.gif" />
+    <Content Include="Static\ue\themes\default\images\charts.png" />
+    <Content Include="Static\ue\themes\default\images\cursor_h.gif" />
+    <Content Include="Static\ue\themes\default\images\cursor_h.png" />
+    <Content Include="Static\ue\themes\default\images\cursor_v.gif" />
+    <Content Include="Static\ue\themes\default\images\cursor_v.png" />
+    <Content Include="Static\ue\themes\default\images\dialog-title-bg.png" />
+    <Content Include="Static\ue\themes\default\images\filescan.png" />
+    <Content Include="Static\ue\themes\default\images\highlighted.gif" />
+    <Content Include="Static\ue\themes\default\images\icons-all.gif" />
+    <Content Include="Static\ue\themes\default\images\icons.gif" />
+    <Content Include="Static\ue\themes\default\images\icons.png" />
+    <Content Include="Static\ue\themes\default\images\loaderror.png" />
+    <Content Include="Static\ue\themes\default\images\loading.gif" />
+    <Content Include="Static\ue\themes\default\images\lock.gif" />
+    <Content Include="Static\ue\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="Static\ue\themes\default\images\pagebreak.gif" />
+    <Content Include="Static\ue\themes\default\images\scale.png" />
+    <Content Include="Static\ue\themes\default\images\sortable.png" />
+    <Content Include="Static\ue\themes\default\images\spacer.gif" />
+    <Content Include="Static\ue\themes\default\images\sparator_v.png" />
+    <Content Include="Static\ue\themes\default\images\table-cell-align.png" />
+    <Content Include="Static\ue\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="Static\ue\themes\default\images\toolbar_bg.png" />
+    <Content Include="Static\ue\themes\default\images\unhighlighted.gif" />
+    <Content Include="Static\ue\themes\default\images\upload.png" />
+    <Content Include="Static\ue\themes\default\images\videologo.gif" />
+    <Content Include="Static\ue\themes\default\images\word.gif" />
+    <Content Include="Static\ue\themes\default\images\wordpaste.png" />
+    <Content Include="Static\ue\themes\iframe.css" />
+    <Content Include="Static\ue\third-party\codemirror\codemirror.css" />
+    <Content Include="Static\ue\third-party\codemirror\codemirror.js" />
+    <Content Include="Static\ue\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="Static\ue\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="Static\ue\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="Static\ue\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\highcharts-more.js" />
+    <Content Include="Static\ue\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\highcharts.js" />
+    <Content Include="Static\ue\third-party\highcharts\highcharts.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\annotations.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\data.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\data.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\exporting.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\funnel.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\map.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\map.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="Static\ue\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="Static\ue\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="Static\ue\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="Static\ue\third-party\highcharts\themes\gray.js" />
+    <Content Include="Static\ue\third-party\highcharts\themes\grid.js" />
+    <Content Include="Static\ue\third-party\highcharts\themes\skies.js" />
+    <Content Include="Static\ue\third-party\jquery-1.10.2.js" />
+    <Content Include="Static\ue\third-party\jquery-1.10.2.min.js" />
+    <Content Include="Static\ue\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="Static\ue\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="Static\ue\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="Static\ue\third-party\video-js\video-js.css" />
+    <Content Include="Static\ue\third-party\video-js\video-js.min.css" />
+    <Content Include="Static\ue\third-party\video-js\video-js.swf" />
+    <Content Include="Static\ue\third-party\video-js\video.dev.js" />
+    <Content Include="Static\ue\third-party\video-js\video.js" />
+    <Content Include="Static\ue\third-party\webuploader\Uploader.swf" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.css" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.min.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="Static\ue\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="Static\ue\third-party\xss.min.js" />
+    <Content Include="Static\ue\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="Static\ue\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="Static\ue\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="Static\ue\ueditor.all.js" />
+    <Content Include="Static\ue\ueditor.all.min.js" />
+    <Content Include="Static\ue\ueditor.config.js" />
+    <Content Include="Static\ue\ueditor.parse.js" />
+    <Content Include="Static\ue\ueditor.parse.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Dal\DAO\" />
+    <Folder Include="Models\" />
+    <Folder Include="Static\css\fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\lib\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\lib\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\lib\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\lib\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\lib\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\lib\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_LayoutMain.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Static\ue\third-party\jquery-1.10.2.min.map" />
+    <Content Include="Static\ue\third-party\video-js\font\vjs.eot" />
+    <Content Include="Static\ue\third-party\video-js\font\vjs.svg" />
+    <Content Include="Static\ue\third-party\video-js\font\vjs.ttf" />
+    <Content Include="Static\ue\third-party\video-js\font\vjs.woff" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14319/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
