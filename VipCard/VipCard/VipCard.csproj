@@ -105,12 +105,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Dal\Entity\Page.cs" />
     <Compile Include="Dal\Util\DBConn.cs" />
     <Compile Include="Dal\Util\DBHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\TestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -418,7 +421,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Dal\DAO\" />
-    <Folder Include="Models\" />
     <Folder Include="Static\css\fonts\" />
   </ItemGroup>
   <ItemGroup>

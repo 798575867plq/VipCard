@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>模板测试页面</title>
+        <link href="../../css/lib/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="divVue" class="h1 text-center">
+            <!-- 对话框部分 -->
+            <alert-dialog ref="alert"></alert-dialog>
+            <confirm-dialog ref="confirm"></confirm-dialog>
+            <wait-dialog ref="wait"></wait-dialog>
+            <custom-dialog ref="custom"></custom-dialog>
+
+            <div>
+                <div id="divDialog" style="display: none;">
+                    <div class="form-group">
+                        <label>请输入：</label>
+                        <input class="form-control" />
+                    </div>
+                    <hr />
+                    <div class="text-center">
+                        <span class="btn btn-danger"
+                        v-on:click="closeMe">关闭</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 对话框部分 -->
+
+
+            {{welcome}}
+            <hr />
+            <span class="btn btn-primary" @click="btnAjax">测试ajax</span>
+            <span class="btn btn-primary" @click="btnDialog">测试对话框</span>
+            <div v-if="showajax">
+                服务器应答数据：{{ajaxdata}}    
+            </div>
+        </div>
+        <script src="../../js/lib/jquery.min.js"></script>
+        <script src="../../js/lib/bootstrap.min.js"></script>
+        <script src="../../js/lib/vue.min.js"></script>
+        <script src="../../js/app/app.js"></script>
+        <script src="../../js/app/dialog.js"></script>
+        <script src="../../js/app/test/template.js"></script>
+    </body>
+</html>
