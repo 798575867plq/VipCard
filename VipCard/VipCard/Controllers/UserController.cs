@@ -22,7 +22,7 @@ namespace VipCard.Controllers
                     throw new Exception("用户名或者密码错误，登陆失败！");
                 }
                 m.Datas.Add("user", user);
-                m.Ok("登陆成功");
+                m.Ok(user["nickname"] + "登陆成功");
             }
             catch (Exception ex)
             {

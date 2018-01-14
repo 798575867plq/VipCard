@@ -1,62 +1,72 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>会员管理系统的设计与实现</title>
-    <!-- css导入要尽早，css导入是非阻塞的 -->
-    <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
-    <link href="../css/app/iconfont.css" rel="stylesheet" />
-    <link href="../css/app/content.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="container-fluid w800 text-center">
-        <div class="h1 text-center text-primary">
-            会员管理系统
-        </div>
-        <div class="text-center">
-            <div class="tp lfloat" onclick="location='hygl.html'">
-                <i class="iconfont">&#xe625;</i>
-                <p class="xz">会员管理</p>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>会员管理系统的设计与实现</title>
+        <!-- css导入要尽早，css导入是非阻塞的 -->
+        <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
+        <link href="../css/app/iconfont.css" rel="stylesheet" />
+        <link href="../css/app/content.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="divVue">
+            <div>
+                <!-- 对话框部分 -->
+                <alert-dialog ref="alert"></alert-dialog>
+                <confirm-dialog ref="confirm"></confirm-dialog>
+                <wait-dialog ref="wait"></wait-dialog>
+                <custom-dialog ref="custom"></custom-dialog>
+                <!-- 对话框部分 -->
             </div>
-            <div class="tp1 lfloat" onclick="location='hyxf.html'">
-                <i class="iconfont">&#xe997;</i>
-                <p class="xz">会员消费</p>
-            </div>
-            <div class="tp lfloat" onclick="location='hyzl.html'">
-                <i class="iconfont">&#xe629;</i>
-                <p class="xz">会员资料</p>
-            </div>
-            <div class="tp1 lfloat" onclick="location='jyjl.html'">
-                <i class="iconfont">&#xe655;</i>
-                <p class="xz">交易记录</p>
-            </div>
-        </div>
-        <div class="text-center">
-            <div class="tp1 lfloat" onclick="location='tjbb.html'">
-                <i class="iconfont">&#xe935;</i>
-                <p class="xz">统计报表</p>
-            </div>
-            <div class="tp lfloat" onclick="location='sjtx.html'">
-                <i class="iconfont">&#xe62c;</i>
-                <p class="xz">事件提醒</p>
-            </div>
-            <div class="tp1 lfloat" onclick="location='jfsc.html'">
-                <i class="iconfont">&#xe747;</i>
-                <p class="xz">积分商城</p>
-            </div>
-            <div class="tp lfloat" onclick="location='xtsz.html'">
-                <i class="iconfont">&#xe64b;</i>
-                <p class="xz">系统设置</p>
+
+            <div class="container-fluid w800 text-center">
+                <div class="h1 text-center text-primary">
+                    会员管理系统
+                </div>
+                <div class="text-center">
+                    <div class="tp lfloat" onclick="location='hygl.html'">
+                        <i class="iconfont">&#xe625;</i>
+                        <p class="xz">会员管理</p>
+                    </div>
+                    <div class="tp1 lfloat" onclick="location='hyxf.html'">
+                        <i class="iconfont">&#xe997;</i>
+                        <p class="xz">会员消费</p>
+                    </div>
+                    <div class="tp lfloat" onclick="location='hyzl.html'">
+                        <i class="iconfont">&#xe629;</i>
+                        <p class="xz">会员资料</p>
+                    </div>
+                    <div class="tp1 lfloat" onclick="location='jyjl.html'">
+                        <i class="iconfont">&#xe655;</i>
+                        <p class="xz">交易记录</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="tp1 lfloat" onclick="location='tjbb.html'">
+                        <i class="iconfont">&#xe935;</i>
+                        <p class="xz">统计报表</p>
+                    </div>
+                    <div class="tp lfloat" onclick="location='sjtx.html'">
+                        <i class="iconfont">&#xe62c;</i>
+                        <p class="xz">事件提醒</p>
+                    </div>
+                    <div class="tp1 lfloat" onclick="location='jfsc.html'">
+                        <i class="iconfont">&#xe747;</i>
+                        <p class="xz">积分商城</p>
+                    </div>
+                    <div class="tp lfloat" onclick="location='xtsz.html'">
+                        <i class="iconfont">&#xe64b;</i>
+                        <p class="xz">系统设置</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-    </div>
-
-    <!-- js导入要尽晚 -->
-    <script src="../js/lib/jquery.min.js"></script>
-    <script src="../js/lib/bootstrap.min.js"></script>
-    <script src="../js/lib/vue.min.js"></script>
-    <script src="../js/lib/angular.min.js"></script>
-    <script src="../js/app/index.js"></script>
-</body>
+        <script src="../js/lib/jquery.min.js"></script>
+        <script src="../js/lib/bootstrap.min.js"></script>
+        <script src="../js/lib/vue.min.js"></script>
+        <script src="../js/app/app.js"></script>
+        <script src="../js/app/dialog.js"></script>
+        <script src="../js/app/index.js"></script>
+    </body>
 </html>

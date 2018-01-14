@@ -26,20 +26,35 @@ select * from TbUser
 go
 
 /*会员卡信息*/
-create table TblVipCard
+create table TbVipCard
 (
 	vcid int identity primary key not null,
-	username nvarchar(50) default '' not null,
-	phone nvarchar(20) unique,
-	cardno varchar(50) not null,
-	/*是否启用*/
-	isenable char(1) default 'y' not null,
-	/*余额*/
-	balance decimal(8,2) check(balance>=0) not null,
-	/*开卡的时间*/
-	createDate datetime default getdate() not null
+	cardno varchar(50) unique not null,
+	username nvarchar(50) not null,
+	password nvarchar(50) not null,
+	sex char(1) check(sex in ('m','f')) default 'm' not null,
+	phone varchar(50) unique not null,
+	info nvarchar(500) default '' not null,
+	createdDate datetime default getdate() not null
 )
 go
 
-select * from TblVipCard
+insert into TbVipCard(cardno,username,password,phone,info) values('888888-888888-888888-888888-888888','内置金卡','888888','18888888888','内置金卡会员')
+
+select * from TbVipCard
+go
+
+/*会员交易信息*/
+create table TbVipCardRecord
+(
+	vcrid int identity primary key not null,
+	vcid int foreign key references TbVipCard(vcid)  not null,
+	rtype int check(rtype in (-1,0,1)) not null, --消费-1，充值1，其它0
+	amount decimal(10,2) check(amount>=0) default 0 not null,
+	info  nvarchar(500) default '' not null,
+	rtime datetime default getdate() not null
+)
+go
+
+select * from TbVipCardRecord
 go

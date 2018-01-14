@@ -107,6 +107,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VipCardController.cs" />
     <Compile Include="Dal\Entity\Page.cs" />
     <Compile Include="Dal\Util\DBConn.cs" />
     <Compile Include="Dal\Util\DBHelper.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\TestModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\VipModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
