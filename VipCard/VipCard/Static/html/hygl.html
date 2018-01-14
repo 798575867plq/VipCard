@@ -29,6 +29,7 @@
                         <tr class="bg-primary">
                             <th>会员卡号</th>
                             <th>会员姓名</th>
+                            <th>会员余额</th>
                             <th>会员性别</th>
                             <th>会员电话</th>
                             <th>信息备注</th>
@@ -38,6 +39,7 @@
                     <tr v-for="d in list">
                         <td>{{d.cardno}}</td>
                         <td>{{d.username}}</td>
+                        <td>{{d.balance}}</td>
                         <td>{{d.sex}}</td>
                         <td>{{d.phone}}</td>
                         <td>{{d.info}}</td>
@@ -51,7 +53,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">会员卡号：</span>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" v-model="vipcard.Cardno"/>
                         </div>
                     </div>
                     -->
@@ -107,18 +109,18 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">会员卡号：</span>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" v-model="vipcard.Cardno"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">续费金额：</span>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" v-model="vipcard.Amount"/>
                         </div>
                     </div>
                     
                     <div class="text-center">
-                        <span class="btn btn-success">确定</span>
+                        <span class="btn btn-success" @click="chargeCard">确定</span>
                         <span class="btn btn-success" @click="hideCharge">取消</span>
                     </div>
                 </div>
@@ -129,24 +131,24 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">会员卡号：（旧卡）</span>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" v-model="vipcard.OldCardno"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">会员卡号：（新卡）</span>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" v-model="vipcard.Cardno"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">确认卡号：（新卡）</span>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control"  v-model="vipcard.Cardno1"/>
                         </div>
                     </div>
                     
                     <div class="text-center">
-                        <span class="btn btn-warning">确定</span>
+                        <span class="btn btn-warning" @click="changeCard">确定</span>
                         <span class="btn btn-warning" @click="hideChange">取消</span>
                     </div>
                 </div>

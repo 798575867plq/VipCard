@@ -40,6 +40,7 @@
                     });
                 },
                 showChange: function() {
+                    app.$data.vipcard = {};
                     app.$refs.custom.show({
                         title: "会员换卡",
                         el: $("#changeDialog")
@@ -47,6 +48,25 @@
                 },
                 hideChange: function() {
                     app.$refs.custom.hide();
+                },
+                changeCard: function() {
+                    app.$refs.wait.show({
+                        body: "数据处理中..."
+                    });
+
+                    MyApp.send("/VipCard/Change", app.$data.vipcard, function(data) {
+                        app.$refs.wait.hide();
+                        if (data.Success) {
+                            app.$refs.alert.show({
+                                body: data.ServerMessage,
+                                cb: query
+                            });
+                        } else {
+                            app.$refs.alert.show({
+                                body: data.ServerMessage
+                            });
+                        }
+                    });
                 },
                 showCharge: function() {
                     app.$refs.custom.show({
@@ -57,6 +77,25 @@
                 hideCharge: function() {
                     app.$refs.custom.hide();
                 },
+                chargeCard: function() {
+                    app.$refs.wait.show({
+                        body: "数据处理中..."
+                    });
+
+                    MyApp.send("/VipCard/Charge", app.$data.vipcard, function(data) {
+                        app.$refs.wait.hide();
+                        if (data.Success) {
+                            app.$refs.alert.show({
+                                body: data.ServerMessage,
+                                cb: query
+                            });
+                        } else {
+                            app.$refs.alert.show({
+                                body: data.ServerMessage
+                            });
+                        }
+                    });
+                }
 
             }
         });
