@@ -14,7 +14,7 @@ namespace VipCard.Controllers
         {
             try
             {
-                string gsql = "select * from TbGoods";
+                string gsql = "select * from TbGoods where amount>0";
                 string vsql = "select * from TbVipCard";
                 string sql = @"select bg.bgid,bg.gid,bg.amount,bg.vcrid,
  CONVERT(varchar,bg.btime,120) 'btime',
