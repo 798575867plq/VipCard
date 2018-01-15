@@ -1,12 +1,55 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>交易记录</title>
     <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/app/content.css" rel="stylesheet" />
-</head>
-<body>
+  </head>
+  <body>
+    <div id="divVue">
+      
+      <div>
+        <!-- 对话框部分 -->
+        <alert-dialog ref="alert"></alert-dialog>
+        <confirm-dialog ref="confirm"></confirm-dialog>
+        <wait-dialog ref="wait"></wait-dialog>
+        <custom-dialog ref="custom"></custom-dialog>
+        <!-- 对话框部分 -->
+      </div>
 
-</body>
+      <div class="text-right">
+        <div class="btn-group">
+          <a class="btn btn-danger" href="index.html">返回菜单</a>
+          <a class="btn btn-danger" href="login.html">退出系统</a>
+        </div>
+      </div>
+      <div>
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr class="bg-primary">
+              <th>会员姓名</th>
+              <th>会员卡号</th>
+              <th>交易项</th>
+              <th>交易金额</th>
+              <th>交易时间</th>
+            </tr>
+          </thead>
+          <tr v-for="d in list">
+            <td>{{d.username}}</td>
+            <td>{{d.cardno}}</td>
+            <td>{{d.info}}</td>
+            <td>{{d.amount}}</td>
+            <td>{{d.rtime}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/vue.min.js"></script>
+    <script src="../js/app/app.js"></script>
+    <script src="../js/app/dialog.js"></script>
+    <script src="../js/app/jyjl.js"></script>
+  </body>
 </html>

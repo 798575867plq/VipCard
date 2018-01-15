@@ -126,3 +126,11 @@ select *
  from TbVipCard vc
  ) a
 go
+
+
+select vcr.info,vcr.amount,
+ CONVERT(varchar,vcr.rtime,120) 'rtime',
+ vc.username,vc.cardno
+ from TbVipCardRecord vcr
+ inner join TbVipCard vc on vcr.vcid=vc.vcid
+go
