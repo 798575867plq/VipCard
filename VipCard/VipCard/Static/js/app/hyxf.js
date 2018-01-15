@@ -21,6 +21,9 @@
                     app.$refs.custom.hide();
                 },
                 addGoods: function() {
+                    app.$refs.wait.show({
+                        body: "数据处理中..."
+                    });
                     var gid = app.$data.goods.Goods.gid;
                     delete app.$data.goods.Goods;
                     app.$data.goods.Gid = gid;
