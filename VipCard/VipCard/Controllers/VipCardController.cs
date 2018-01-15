@@ -14,7 +14,7 @@ namespace VipCard.Controllers
         {
             try
             {
-                string sql = @"select vc.cardno,vc.username,vc.phone,
+                string sql = @"select vc.cardno,vc.username,vc.phone,vc.info,
  case vc.sex when 'm' then '男' when 'f' then '女' else '保密' end 'sex',
  (select SUM(amount*rtype) from TbVipCardRecord where vcid=vc.vcid) 'balance',
  CONVERT(varchar,createdDate,120) 'createdDate'
