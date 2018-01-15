@@ -56,13 +56,59 @@ create table TbVipCardRecord
 )
 go
 
+insert into TbVipCardRecord(vcid,rtype,amount,info) values(1,1,10000,'内置金卡默认充值')
+go
+
 select * from TbVipCardRecord
 go
 
-select vc.cardno,vc.username,vc.phone,
+select vc.cardno,vc.username,vc.phone,vc.info,
 case vc.sex when 'm' then '男' when 'f' then '女' else '保密' end 'sex',
 (select SUM(amount*rtype) from TbVipCardRecord where vcid=vc.vcid) 'balance',
 CONVERT(varchar,createdDate,120) 'createdDate'
 from TbVipCard vc
 go
 
+create table TbGoods
+(
+	gid int identity primary key not null,
+	gname nvarchar(50) unique not null,
+	price decimal(10,2) check(price>=0) not null,
+	amount int check(amount>=0) not null
+)
+go
+
+insert into TbGoods(gname,price,amount) values('可口可乐',3,2000)
+insert into TbGoods(gname,price,amount) values('82拉菲',1200,100)
+insert into TbGoods(gname,price,amount) values('老白干',200,1234)
+go
+
+select * from TbGoods
+go
+
+--select @@IDENTITY
+
+create table TbBuyGoods
+(
+	bgid int identity primary key not null,
+	gid int foreign key references TbGoods(gid) not null,
+	amount int check(amount>=0) not null,
+	vcrid int foreign key references TbVipCardRecord(vcrid) not null,
+	btime datetime default getdate() not null
+)
+go
+
+insert into TbVipCardRecord(vcid,rtype,amount,info) values(1,-1,2400,'商品购买')
+insert into TbBuyGoods(gid,amount,vcrid) values(2,2,2)
+
+select bg.bgid,bg.gid,bg.amount,bg.vcrid,
+ CONVERT(varchar,bg.btime,120) 'btime',
+ g.gname,g.price,vcr.amount 'vamount',vc.cardno,vc.username
+ from TbBuyGoods bg
+inner join TbGoods g on bg.gid=g.gid
+inner join TbVipCardRecord vcr on bg.vcrid=vcr.vcrid
+inner join TbVipCard vc on vcr.vcid=vc.vcid
+go
+
+select * from TbBuyGoods
+go
