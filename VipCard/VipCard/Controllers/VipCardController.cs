@@ -14,11 +14,18 @@ namespace VipCard.Controllers
         {
             try
             {
-                string sql = @"select vc.cardno,vc.username,vc.phone,vc.info,
+                string sql = @"select *
+	,case when lbalance<=200 then '普通卡' when lbalance<=500 then '黄金卡' when lbalance<=1000 then '白金卡' else '钻石卡' end 'level'
+ from
+ (
+ select vc.cardno,vc.username,vc.phone,vc.info,
  case vc.sex when 'm' then '男' when 'f' then '女' else '保密' end 'sex',
  (select SUM(amount*rtype) from TbVipCardRecord where vcid=vc.vcid) 'balance',
+ (select SUM(amount*rtype) from TbVipCardRecord where vcid=vc.vcid and rtype=1) 'lbalance',
+  CONVERT(int,(select SUM(amount*rtype*-1) from TbVipCardRecord where vcid=vc.vcid and rtype=-1)) 'integral',
  CONVERT(varchar,createdDate,120) 'createdDate'
- from TbVipCard vc";
+ from TbVipCard vc
+ ) a";
                 IList<IDictionary<string, object>> data = DBHelper.QueryDicRows(sql);
                 m.Datas.Add("list", data);
                 m.Ok("查询完成");
