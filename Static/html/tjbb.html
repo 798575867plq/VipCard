@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>统计报表</title>
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/app/content.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="divVue">
+        <div>
+            <!-- 对话框部分 -->
+            <alert-dialog ref="alert"></alert-dialog>
+            <confirm-dialog ref="confirm"></confirm-dialog>
+            <wait-dialog ref="wait"></wait-dialog>
+            <custom-dialog ref="custom"></custom-dialog>
+            <!-- 对话框部分 -->
+        </div>
+        <div>
+            <div class="text-right">
+                <div class="btn-group">
+                    <a class="btn btn-danger" href="index.html">返回菜单</a>
+                    <a class="btn btn-danger" href="login.html">退出系统</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-success ma">
+        <div class="panel-heading">
+            <h3 class="panel-title">会员情况统计</h3>
+        </div>
+        <div class="panel-body form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">会员等级：</span>
+                    <select class="form-control">
+                        <option value="1">普通卡</option>
+                        <option value="2">黄金卡</option>
+                        <option value="3">白金卡</option>
+                        <option value="4">钻石卡</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">注册时间：</span>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">会员卡状态：</span>
+                    <select class="form-control">
+                        <option value="1">正常</option>
+                        <option value="2">挂失</option>
+                        <option value="3">冻结</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">卡的余额：</span>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer text-center">
+            <span class="btn btn-success">查询</span>
+            <span class="btn btn-success">取消</span>
+        </div>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>会员卡号</th>
+                <th>注册时间</th>
+                <th>会员卡状态</th>
+                <th>会员姓名</th>
+                <th>会员性别</th>
+                <th>会员电话</th>
+                <th>会员卡等级</th>
+                <th>会员积分</th>
+                <th>会员余额</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>

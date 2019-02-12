@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>会员资料</title>
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/app/content.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="divVue">
+      <div>
+           <!-- 对话框部分 -->
+          <alert-dialog ref="alert"></alert-dialog>
+          <confirm-dialog ref="confirm"></confirm-dialog>
+          <wait-dialog ref="wait"></wait-dialog>
+          <custom-dialog ref="custom"></custom-dialog>
+          <!-- 对话框部分 -->
+      </div>
+      <div class="text-right">
+        <div class="btn-group">
+          <a class="btn btn-danger" href="index.html">返回菜单</a>
+          <a class="btn btn-danger" href="login.html">退出系统</a>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4" v-for="d in list">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <div class="panel-title">{{d.username}}</div>
+              </div>
+              <div class="panel-body">
+                <div class="form-control">卡号：{{d.cardno}}</div>
+                <div class="form-control">等级：{{d.level}}</div>
+                <div class="form-control">余额：{{d.balance}}</div>
+                <div class="form-control">积分：{{d.integral}}</div>
+                <div class="form-control">电话：{{d.phone}}</div>
+                <div class="form-control">性别：{{d.sex}}</div>
+                <div class="form-control">创建时间：{{d.createddate}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/vue.min.js"></script>
+    <script src="../js/app/app.js"></script>
+    <script src="../js/app/dialog.js"></script>
+    <script src="../js/app/hyzl.js"></script>
+  </body>
+</html>
